@@ -25,7 +25,12 @@
                 layout="@layout/toolbar_driver"
                 />
         </com.google.android.material.appbar.AppBarLayout>
-
+        <androidx.fragment.app.FragmentContainerView
+            android:name="com.example.uberapptim24.fragments.driver.DriverHomeFragment"
+            android:id="@+id/driver_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_driver_home" />
 
     </LinearLayout>
 

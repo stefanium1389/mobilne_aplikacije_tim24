@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.uberapptim24.R;
+import com.example.uberapptim24.fragments.driver.DriverHomeFragment;
+import com.example.uberapptim24.fragments.driver.DriverRideHistoryFragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DriverMainActivity extends AppCompatActivity {
@@ -52,7 +54,7 @@ public class DriverMainActivity extends AppCompatActivity {
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_drive_history, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_drive_history);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //replaceFragment(new DriverDriveHistoryFragment());
+                        replaceFragment(new DriverRideHistoryFragment());
                         break;
                     case R.id.nav_inbox:
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_inbox, Toast.LENGTH_SHORT).show();
@@ -62,7 +64,7 @@ public class DriverMainActivity extends AppCompatActivity {
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_home, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_home);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //replaceFragment(new DriverHomeFragment());
+                        replaceFragment(new DriverHomeFragment());
                         break;
                     case R.id.nav_logout:
                         Toast.makeText(DriverMainActivity.this, R.string.logout, Toast.LENGTH_SHORT).show();
@@ -85,7 +87,7 @@ public class DriverMainActivity extends AppCompatActivity {
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //fragmentTransaction.replace(R.id.driver_main_layout, fragment);
+        fragmentTransaction.replace(R.id.driver_main_layout, fragment);
         fragmentTransaction.commit();
     }
 }
