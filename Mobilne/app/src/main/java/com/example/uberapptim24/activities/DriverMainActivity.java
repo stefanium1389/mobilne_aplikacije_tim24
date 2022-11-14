@@ -86,6 +86,8 @@ public class DriverMainActivity extends AppCompatActivity
                         break;
                     case R.id.nav_logout:
                         Toast.makeText(DriverMainActivity.this, R.string.logout, Toast.LENGTH_SHORT).show();
+                        intent = new Intent(DriverMainActivity.this, UserLoginActivity.class);
+                        startActivity(intent);
                         finish();
                         break;
                 }
