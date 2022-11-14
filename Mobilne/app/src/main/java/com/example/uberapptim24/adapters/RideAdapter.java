@@ -14,7 +14,6 @@ import com.example.uberapptim24.model.Ride;
 
 public class RideAdapter extends BaseAdapter {
     Activity activity;
-    RideMock mock = new RideMock();
 
     public RideAdapter(Activity activity) {
         this.activity = activity;
@@ -22,12 +21,12 @@ public class RideAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mock.rides.size();
+        return RideMock.getMockRides().size();
     }
 
     @Override
     public Object getItem(int i) {
-        return mock.rides.get(i);
+        return RideMock.getMockRides().get(i);
     }
 
     @Override
@@ -39,7 +38,7 @@ public class RideAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi=convertView;
         final RecyclerView.ViewHolder vh;
-        Ride ride = mock.rides.get(position);
+        Ride ride = RideMock.getMockRides().get(position);
 
         if(vi==null) {
             vi = activity.getLayoutInflater().inflate(R.layout.ride_list_item, null);
