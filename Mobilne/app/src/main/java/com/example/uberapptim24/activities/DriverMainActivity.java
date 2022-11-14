@@ -40,10 +40,7 @@ public class DriverMainActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar_driver);//custom toolbar
         setSupportActionBar(toolbar);
 
-        //set home fragment as active
-        replaceFragment(new DriverHomeFragment());
         toolbar.setTitle(R.string.nav_menu_home);//set toolbar title
-
 
         drawerLayout = findViewById(R.id.driver_main_drawer);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close); //add tollbar button
@@ -55,6 +52,7 @@ public class DriverMainActivity extends AppCompatActivity
             actionBar.setDisplayHomeAsUpEnabled(true); //show the button
             actionBar.setHomeAsUpIndicator(R.drawable.ic_hamburger);//HAMBURGER HAMBURGER HAMBURGER custom icon for toolbar home button
         }
+
 
         navigation = findViewById(R.id.nav_menu_driver); //the menu inside the drawer
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {

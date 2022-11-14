@@ -23,6 +23,7 @@ public class UserLoginActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent intent = new Intent(UserLoginActivity.this, DriverMainActivity.class); // "nameravam da predjem iz this u pasenger main activity"
                 startActivity(intent);
+                finish();
             }
         });
         registerButton.setOnClickListener(new View.OnClickListener() { // register dugme akcija
