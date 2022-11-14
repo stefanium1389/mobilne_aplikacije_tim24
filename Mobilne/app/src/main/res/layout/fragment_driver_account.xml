@@ -3,15 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_background"
-    tools:context=".fragments.driver.DriverHomeFragment">
+    tools:context=".fragments.driver.DriverAccountFragment">
 
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOff="@string/offline"
-        android:textOn="@string/online"
-        android:layout_gravity="end"/>
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_gravity="center"
@@ -20,6 +13,6 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textColor="@color/black"
-        android:text="Driver home" />
+        android:text="Driver account" />
 
 </FrameLayout>

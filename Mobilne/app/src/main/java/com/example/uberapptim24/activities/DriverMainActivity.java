@@ -1,6 +1,7 @@
 package com.example.uberapptim24.activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,7 +17,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.uberapptim24.R;
+import com.example.uberapptim24.fragments.driver.DriverAccountFragment;
 import com.example.uberapptim24.fragments.driver.DriverHomeFragment;
+import com.example.uberapptim24.fragments.driver.DriverInboxFragment;
 import com.example.uberapptim24.fragments.driver.DriverRideHistoryFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -31,16 +34,27 @@ public class DriverMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_main);
 
+        //setup custom toolbar
         toolbar = findViewById(R.id.toolbar_driver);//custom toolbar
         setSupportActionBar(toolbar);
 
-        drawerLayout = findViewById(R.id.driver_main_drawer);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //set home fragment as active
+        replaceFragment(new DriverHomeFragment());
+        toolbar.setTitle(R.string.nav_menu_home);//set toolbar title
 
-        navigation = findViewById(R.id.nav_menu_driver);
+
+        drawerLayout = findViewById(R.id.driver_main_drawer);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close); //add tollbar button
+        drawerLayout.addDrawerListener(actionBarDrawerToggle);  //set listener for the "hamburger menu" button
+        actionBarDrawerToggle.syncState(); // not sure
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true); //show the button
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_hamburger);//HAMBURGER HAMBURGER HAMBURGER custom icon for toolbar home button
+        }
+
+        navigation = findViewById(R.id.nav_menu_driver); //the menu inside the drawer
         navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -48,7 +62,9 @@ public class DriverMainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.nav_acc_history:
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_acc_history, Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle(R.string.nav_menu_acc_history);
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        replaceFragment(new DriverAccountFragment());
                         break;
                     case R.id.nav_drive_history:
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_drive_history, Toast.LENGTH_SHORT).show();
@@ -58,7 +74,9 @@ public class DriverMainActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_inbox:
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_inbox, Toast.LENGTH_SHORT).show();
+                        toolbar.setTitle(R.string.nav_menu_inbox);
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        replaceFragment(new DriverInboxFragment());
                         break;
                     case R.id.nav_home:
                         Toast.makeText(DriverMainActivity.this, R.string.nav_menu_home, Toast.LENGTH_SHORT).show();

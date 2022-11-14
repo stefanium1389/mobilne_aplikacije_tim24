@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.uberapptim24.R;
 import com.example.uberapptim24.mock.RideMock;
 import com.example.uberapptim24.model.Ride;
@@ -36,11 +38,12 @@ public class RideAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi=convertView;
+        final RecyclerView.ViewHolder vh;
         Ride ride = mock.rides.get(position);
 
-        if(convertView==null)
+        if(vi==null) {
             vi = activity.getLayoutInflater().inflate(R.layout.ride_list_item, null);
-
+        }
         TextView passenger = (TextView)vi.findViewById(R.id.ride_list_item_passenger);
         TextView endLocation = (TextView)vi.findViewById(R.id.ride_list_item_endLocation);
 
