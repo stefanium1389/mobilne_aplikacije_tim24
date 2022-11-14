@@ -7,60 +7,55 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.uberapptim24.R;
+import com.example.uberapptim24.adapters.RideAdapter;
+import com.example.uberapptim24.mock.DriverMock;
+import com.example.uberapptim24.model.Driver;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DriverAccountFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class DriverAccountFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    View view;
 
     public DriverAccountFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DriverAccountFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DriverAccountFragment newInstance(String param1, String param2) {
-        DriverAccountFragment fragment = new DriverAccountFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_driver_account, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View inf = inflater.inflate(R.layout.fragment_driver_account, container, false);
+        DriverMock driverMock = new DriverMock();
+        Driver dummy = driverMock.getMockSingleDriver();
+
+        TextView tv = (TextView) inf.findViewById(R.id.driver_account_email_value);
+        tv.setText(dummy.getEmail());
+        tv = (TextView) inf.findViewById(R.id.driver_account_address_value);
+        tv.setText(dummy.getAdress());
+        tv = (TextView) inf.findViewById(R.id.driver_account_status_value);
+        if (dummy.isBlocked())
+        {
+            tv.setText(R.string.driver_account_blocked);
+        }
+        else {
+            tv.setText(R.string.driver_account_normal);
+        }
+
+        tv = (TextView) inf.findViewById(R.id.driver_account_phone_number_value);
+        String number = Integer.toString(dummy.getPhoneNumber());
+        tv.setText(number);
+
+        tv = (TextView) inf.findViewById(R.id.driver_account_name_and_surname_value);
+        String nameAndSurname = dummy.getName() + " "+ dummy.getSurname();
+        tv.setText(nameAndSurname);
+        return inf;
     }
 }
