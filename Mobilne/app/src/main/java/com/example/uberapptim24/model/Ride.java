@@ -3,38 +3,31 @@ package com.example.uberapptim24.model;
 import java.time.LocalDateTime;
 
 public class Ride {
-    private LocalDateTime start;
-    private LocalDateTime end;
+
+    private String startDateTime;
+    private String endDateTime;
     private String driver;
     private String passenger;
     private String startLocation;
     private String endLocation;
     private int rideLength;
+    private int rating;
+    private String comment;
+    private int id;
 
-    public Ride(LocalDateTime start, LocalDateTime end, String driver, String passenger, String startLocation, String endLocation, int rideLength) {
-        this.start = start;
-        this.end = end;
+
+
+    public Ride(String driver, String passenger, String startLocation, String endLocation, int rideLength, String startTime, String endTime,int rating, String comment,int id) {
         this.driver = driver;
         this.passenger = passenger;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.rideLength = rideLength;
-    }
-
-    public LocalDateTime getStart() {
-        return start;
-    }
-
-    public void setStart(LocalDateTime start) {
-        this.start = start;
-    }
-
-    public LocalDateTime getEnd() {
-        return end;
-    }
-
-    public void setEnd(LocalDateTime end) {
-        this.end = end;
+        this.startDateTime = startTime;
+        this.endDateTime = endTime;
+        this.rating = rating;
+        this.comment = comment;
+        this.id = id;
     }
 
     public String getDriver() {
@@ -75,5 +68,41 @@ public class Ride {
 
     public void setRideLength(int rideLength) {
         this.rideLength = rideLength;
+    }
+
+    public String getStartDateTime() {
+        return startDateTime;
+    }
+
+    public void setStartDateTime(String startDateTime) {
+        this.startDateTime = startDateTime;
+    }
+
+    public String getEndDateTime() {
+        return endDateTime;
+    }
+
+    public void setEndDateTime(String endDateTime) {
+        this.endDateTime = endDateTime;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public int getId() {
+        return id;
     }
 }

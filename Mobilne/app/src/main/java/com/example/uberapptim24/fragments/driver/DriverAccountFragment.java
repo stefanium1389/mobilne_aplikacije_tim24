@@ -15,7 +15,6 @@ import com.example.uberapptim24.adapters.RideAdapter;
 import com.example.uberapptim24.mock.DriverMock;
 import com.example.uberapptim24.model.Driver;
 
-
 public class DriverAccountFragment extends Fragment {
 
     View view;

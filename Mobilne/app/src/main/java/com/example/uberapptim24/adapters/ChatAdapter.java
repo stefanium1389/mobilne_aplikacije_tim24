@@ -49,8 +49,7 @@ public class ChatAdapter extends BaseAdapter {
         TextView startDate = (TextView)vi.findViewById(R.id.passenger_inbox_list_item_date);
 
         driver.setText(ride.getDriver());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
-        startDate.setText(formatter.format(ride.getStart()));
+        startDate.setText(ride.getStartDateTime());
 
         return vi;
     }

@@ -17,9 +17,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.uberapptim24.R;
-import com.example.uberapptim24.fragments.driver.DriverAccountFragment;
-import com.example.uberapptim24.fragments.driver.DriverHomeFragment;
-import com.example.uberapptim24.fragments.driver.DriverRideHistoryFragment;
+import com.example.uberapptim24.fragments.passenger.PassengerAccountFragment;
+import com.example.uberapptim24.fragments.passenger.PassengerRideHistoryFragment;
+import com.example.uberapptim24.fragments.passenger.PassengerHomeFragment;
 import com.example.uberapptim24.fragments.passenger.PassengerInboxFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -31,7 +31,8 @@ public class PassengerMainActivity extends AppCompatActivity
     NavigationView navigation;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_main);
 
@@ -40,7 +41,7 @@ public class PassengerMainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //set home fragment as active
-        replaceFragment(new DriverHomeFragment());
+        replaceFragment(new PassengerHomeFragment());
         toolbar.setTitle(R.string.nav_menu_home);//set toolbar title
 
 
@@ -65,13 +66,13 @@ public class PassengerMainActivity extends AppCompatActivity
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_acc_history, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_acc_history);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        replaceFragment(new DriverAccountFragment());
+                        replaceFragment(new PassengerAccountFragment());
                         break;
                     case R.id.nav_drive_history:
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_drive_history, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_drive_history);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        replaceFragment(new DriverRideHistoryFragment());
+                        replaceFragment(new PassengerRideHistoryFragment());
                         break;
                     case R.id.nav_inbox:
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_inbox, Toast.LENGTH_SHORT).show();
@@ -83,7 +84,7 @@ public class PassengerMainActivity extends AppCompatActivity
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_home, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_home);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        replaceFragment(new DriverHomeFragment());
+                        replaceFragment(new PassengerHomeFragment());
                         break;
                     case R.id.nav_logout:
                         Toast.makeText(PassengerMainActivity.this, R.string.logout, Toast.LENGTH_SHORT).show();
@@ -111,5 +112,41 @@ public class PassengerMainActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.driver_main_layout, fragment);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+    }
+
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
     }
 }

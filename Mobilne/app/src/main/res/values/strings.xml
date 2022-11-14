@@ -31,4 +31,20 @@
     <string name="driver_account_blocked">blocked</string>
     <string name="driver_account_normal">normal</string>
     <string name="passenger_pinned_chat_support">Support chat</string>
+    <string name="passenger_account_email">Email:</string>
+    <string name="passenger_account_status">Status:</string>
+    <string name="passenger_account_address">Address:</string>
+    <string name="passenger_account_phone_number">Phone number:</string>
+    <string name="passenger_account_blocked">blocked</string>
+    <string name="passenger_account_normal">normal</string>
+    <string name="driver">Driver: </string>
+    <string name="passenger">Passenger: </string>
+    <string name="start_location">Start Location: </string>
+    <string name="end_location">End Location: </string>
+    <string name="start_time">Start Time: </string>
+    <string name="end_time">End Time: </string>
+    <string name="rating">Rating: </string>
+    <string name="comment">Comment: </string>
+    <string name="ride_details">Ride Details</string>
+    <string name="ride_length">"Ride Length: "</string>
 </resources>
