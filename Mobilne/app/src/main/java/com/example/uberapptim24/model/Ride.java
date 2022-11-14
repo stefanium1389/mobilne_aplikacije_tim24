@@ -1,18 +1,40 @@
 package com.example.uberapptim24.model;
 
+import java.time.LocalDateTime;
+
 public class Ride {
+    private LocalDateTime start;
+    private LocalDateTime end;
     private String driver;
     private String passenger;
     private String startLocation;
     private String endLocation;
     private int rideLength;
 
-    public Ride(String driver, String passenger, String startLocation, String endLocation, int rideLength) {
+    public Ride(LocalDateTime start, LocalDateTime end, String driver, String passenger, String startLocation, String endLocation, int rideLength) {
+        this.start = start;
+        this.end = end;
         this.driver = driver;
         this.passenger = passenger;
         this.startLocation = startLocation;
         this.endLocation = endLocation;
         this.rideLength = rideLength;
+    }
+
+    public LocalDateTime getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDateTime start) {
+        this.start = start;
+    }
+
+    public LocalDateTime getEnd() {
+        return end;
+    }
+
+    public void setEnd(LocalDateTime end) {
+        this.end = end;
     }
 
     public String getDriver() {

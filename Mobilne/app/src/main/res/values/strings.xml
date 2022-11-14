@@ -30,4 +30,5 @@
     <string name="driver_account_phone_number">Phone number:</string>
     <string name="driver_account_blocked">blocked</string>
     <string name="driver_account_normal">normal</string>
+    <string name="passenger_pinned_chat_support">Support chat</string>
 </resources>
