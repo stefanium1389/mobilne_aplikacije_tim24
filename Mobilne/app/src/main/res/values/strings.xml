@@ -30,4 +30,10 @@
     <string name="driver_account_phone_number">Phone number:</string>
     <string name="driver_account_blocked">blocked</string>
     <string name="driver_account_normal">normal</string>
+    <string name="passenger_account_email">Email:</string>
+    <string name="passenger_account_status">Status:</string>
+    <string name="passenger_account_address">Address:</string>
+    <string name="passenger_account_phone_number">Phone number:</string>
+    <string name="passenger_account_blocked">blocked</string>
+    <string name="passenger_account_normal">normal</string>
 </resources>
