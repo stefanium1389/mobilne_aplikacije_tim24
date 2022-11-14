@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.example.uberapptim24.R;
 import com.example.uberapptim24.fragments.passenger.PassengerAccountFragment;
-import com.example.uberapptim24.fragments.driver.DriverRideHistoryFragment;
+import com.example.uberapptim24.fragments.passenger.PassengerRideHistoryFragment;
 import com.example.uberapptim24.fragments.passenger.PassengerHomeFragment;
 import com.example.uberapptim24.fragments.passenger.PassengerInboxFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -71,7 +71,7 @@ public class PassengerMainActivity extends AppCompatActivity
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_drive_history, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_drive_history);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        replaceFragment(new DriverRideHistoryFragment());
+                        replaceFragment(new PassengerRideHistoryFragment());
                         break;
                     case R.id.nav_inbox:
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_inbox, Toast.LENGTH_SHORT).show();

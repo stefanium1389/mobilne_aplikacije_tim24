@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".fragments.passenger.PassengerAccountFragment">
 
     <LinearLayout
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textSize="30sp"
+            android:textColor="@color/black"
             android:text="@string/placeholder" />
 
         <LinearLayout
@@ -43,28 +45,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/passenger_account_email"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/passenger_account_address"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/passenger_account_phone_number"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_status"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/passenger_account_status"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
@@ -79,28 +85,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/placeholder"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_address_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/placeholder"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_phone_number_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/placeholder"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/passenger_account_status_value"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/placeholder"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
 
