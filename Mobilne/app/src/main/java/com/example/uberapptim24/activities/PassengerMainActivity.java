@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 import com.example.uberapptim24.R;
 import com.example.uberapptim24.fragments.driver.DriverAccountFragment;
-import com.example.uberapptim24.fragments.driver.DriverHomeFragment;
 import com.example.uberapptim24.fragments.driver.DriverRideHistoryFragment;
+import com.example.uberapptim24.fragments.passenger.PassengerHomeFragment;
 import com.example.uberapptim24.fragments.passenger.PassengerInboxFragment;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,7 +40,7 @@ public class PassengerMainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         //set home fragment as active
-        replaceFragment(new DriverHomeFragment());
+        replaceFragment(new PassengerHomeFragment());
         toolbar.setTitle(R.string.nav_menu_home);//set toolbar title
 
 
@@ -83,7 +83,7 @@ public class PassengerMainActivity extends AppCompatActivity
                         Toast.makeText(PassengerMainActivity.this, R.string.nav_menu_home, Toast.LENGTH_SHORT).show();
                         toolbar.setTitle(R.string.nav_menu_home);
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        replaceFragment(new DriverHomeFragment());
+                        replaceFragment(new PassengerHomeFragment());
                         break;
                     case R.id.nav_logout:
                         Toast.makeText(PassengerMainActivity.this, R.string.logout, Toast.LENGTH_SHORT).show();
