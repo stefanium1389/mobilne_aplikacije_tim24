@@ -1,8 +1,10 @@
-package com.example.uberapptim24;
+package com.example.uberapptim24.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.uberapptim24.R;
 
 public class PassengerMainActivity extends AppCompatActivity {
 
