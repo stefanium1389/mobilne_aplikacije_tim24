@@ -5,7 +5,7 @@
     android:layout_height="200dp"
     android:padding="20dp"
     android:gravity="start"
-    android:background="@color/purple_500">
+    android:background="@color/olive_green">
 
     <ImageView
         android:layout_width="120dp"

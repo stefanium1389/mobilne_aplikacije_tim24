@@ -5,21 +5,52 @@
     android:layout_height="match_parent"
     android:background="@color/design_default_color_background"
     tools:context=".fragments.driver.DriverHomeFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <ToggleButton
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
         android:textOff="@string/offline"
         android:textOn="@string/online"
-        android:layout_gravity="end"/>
+        android:layout_gravity="center_horizontal"/>
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_gravity="center"
-        android:textSize="40sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="Driver home" />
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:src="@drawable/maps"/>
+
+    <LinearLayout
+        android:layout_marginTop="450dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="From" />
+        <EditText
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="To" />
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate"/>
+
+    </LinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>
