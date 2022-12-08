@@ -47,4 +47,10 @@
     <string name="comment">Comment: </string>
     <string name="ride_details">Ride Details</string>
     <string name="ride_length">"Ride Length: "</string>
+    <string name="accept">Accept</string>
+    <string name="odrediste">Odrediste</string>
+    <string name="polaziste">Polaziste</string>
+    <string name="price_string">400 RSD</string>
+    <string name="estimated_time">15 min</string>
+    <string name="babies_pets">Babies, Pets</string>
 </resources>
